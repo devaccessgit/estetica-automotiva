@@ -1,127 +1,113 @@
-/* Reset básico */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  /* Corpo da página */
-  body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-    line-height: 1.6;
-    padding: 20px;
-    margin: 0;
-  }
-  
-  /* Header e título */
-  header {
-    text-align: center;
-    margin-bottom: 30px;
-  }
-  
-  h1 {
-    font-size: 2.5rem;
-    color: #333;
-  }
-  
-  /* Tema claro/escuro */
-  body.dark-mode {
-    background-color: #333;
-    color: #f4f4f4;
-  }
-  
-  /* Botão de alternância de tema */
-  #toggle-theme {
-    background: none;
-    border: 2px solid #333;
-    color: #333;
-    padding: 10px 20px;
-    font-size: 1rem;
-    cursor: pointer;
-  }
-  
-  body.dark-mode #toggle-theme {
-    border: 2px solid #f4f4f4;
-    color: #f4f4f4;
-  }
-  
-  /* Seções */
-  section {
-    margin-bottom: 40px;
-  }
-  
-  h2 {
-    font-size: 1.8rem;
-    margin-bottom: 15px;
-    text-align: center;
-  }
-  
-  h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-  }
-  
-  ul {
-    list-style-type: none;
-    padding-left: 0;
-  }
-  
-  ul li {
-    font-size: 1.1rem;
-    margin-bottom: 10px;
-  }
-  
-  /* Formulário de agendamento */
-  form input, form select, form button {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  form button {
-    background-color: #333;
-    color: #fff;
-    cursor: pointer;
+:root {
+  --bg: #fff;
+  --text: #111;
+  --accent: #007bff;
+}
+
+body.dark-mode {
+  --bg: #111;
+  --text: #eee;
+  --accent: #00bfff;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  margin: 0;
+  padding: 0;
+  transition: background 0.3s, color 0.3s;
+}
+
+header {
+  background-color: var(--accent);
+  color: white;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+main {
+  padding: 1rem;
+}
+
+h2 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.categorias {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.categorias div {
+  border: 1px solid var(--accent);
+  padding: 1rem;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  transition: transform 0.3s ease;
+}
+
+body.dark-mode .categorias div {
+  background-color: #222;
+}
+
+.categorias div:hover {
+  transform: scale(1.02);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-width: 400px;
+  margin: auto;
+}
+
+input, select, button {
+  padding: 0.75rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+button {
+  background-color: var(--accent);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+footer {
+  background-color: #eee;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+.dark-mode footer {
+  background-color: #222;
+  color: #aaa;
+}
+
+@media (max-width: 600px) {
+  header h1 {
     font-size: 1.2rem;
-    border: none;
-    transition: background-color 0.3s;
   }
-  
-  form button:hover {
-    background-color: #555;
+
+  form {
+    width: 100%;
   }
-  
-  /* Layout Responsivo */
-  @media (min-width: 768px) {
-    .categorias {
-      display: flex;
-      justify-content: space-between;
-    }
-    .categorias div {
-      width: 23%;
-    }
+
+  .categorias {
+    grid-template-columns: 1fr;
   }
-  
-  /* Rodapé */
-  footer {
-    text-align: center;
-    margin-top: 40px;
-    font-size: 0.9rem;
-    color: #666;
-  }
-  
-  /* Seção de mais informações */
-  .info {
-    background-color: #e1e1e1;
-    padding: 20px;
-    text-align: center;
-    border-radius: 5px;
-  }
-  
-  body.dark-mode .info {
-    background-color: #444;
-  }
+}

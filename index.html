@@ -5,11 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Estética Automotiva</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <script defer src="script.js"></script>
 </head>
 <body>
   <header>
-    <h1>Estética Automotiva</h1>
+    <h1>🚗 Estética Automotiva</h1>
     <button id="toggle-theme">🌙</button>
   </header>
 
@@ -18,7 +19,7 @@
       <h2>Serviços Prestados</h2>
       <div class="categorias">
         <div>
-          <h3>Estética</h3>
+          <h3><i class="fas fa-spray-can-sparkles"></i> Estética</h3>
           <ul>
             <li>Lavagem detalhada</li>
             <li>Descontaminação pintura</li>
@@ -33,7 +34,7 @@
           </ul>
         </div>
         <div>
-          <h3>Higienizações</h3>
+          <h3><i class="fas fa-pump-soap"></i> Higienizações</h3>
           <ul>
             <li>Sofás, colchões, cadeiras</li>
             <li>Poltronas, persianas, tapetes</li>
@@ -41,7 +42,7 @@
           </ul>
         </div>
         <div>
-          <h3>Acessórios</h3>
+          <h3><i class="fas fa-tools"></i> Acessórios</h3>
           <ul>
             <li>Som, alarme, engates</li>
             <li>Insulfilm, lâmpadas</li>
@@ -49,7 +50,7 @@
           </ul>
         </div>
         <div>
-          <h3>Manutenções</h3>
+          <h3><i class="fas fa-wrench"></i> Manutenções</h3>
           <ul>
             <li>Óleo e filtros, suspensão</li>
             <li>Freio, correia dentada</li>
@@ -61,25 +62,26 @@
     </section>
 
     <section id="agendamento">
-      <h2>Agende seu horário</h2>
+      <h2><i class="fas fa-calendar-check"></i> Agende seu horário</h2>
       <form id="form-agendamento">
-        <input type="text" name="nome" placeholder="Seu nome" required />
+        <input type="text" id="nome" name="nome" placeholder="Seu nome" required />
         
-        <select name="servico" required>
+        <select id="servico" name="servico" required>
           <option value="">Escolha o serviço</option>
           <option>Lavagem detalhada</option>
           <option>Polimento</option>
           <option>Insulfilm</option>
           <option>Revisão</option>
         </select>
-        <input type="date" name="data" required />
-        <input type="time" name="hora" required />
-        <button type="submit">Agendar via WhatsApp</button>
+        
+        <input type="date" id="data" name="data" required />
+        <input type="time" id="hora" name="hora" required />
+        <button type="submit"><i class="fab fa-whatsapp"></i> Agendar via WhatsApp</button>
       </form>
     </section>
 
     <section class="info">
-      <h2>Mais informações</h2>
+      <h2><i class="fas fa-info-circle"></i> Mais informações</h2>
       <p>Faça seu orçamento sem compromisso!</p>
       <p>Sistema leva e traz disponível 🚗💨</p>
     </section>
