@@ -7,7 +7,7 @@ toggleThemeButton.addEventListener('click', () => {
 // Função para enviar mensagem via WhatsApp
 function enviarMensagemWhatsApp(nome, servico, data, hora, telefone) {
   const mensagem = `Olá ${nome}! Seu agendamento para o serviço de ${servico} foi confirmado para o dia ${data} às ${hora}.`;
-  const numeroWhatsApp = `https://wa.me/55${telefone.replace(/\D/g, '')}?text=${encodeURIComponent(mensagem)}`;
+  const numeroWhatsApp = `https://wa.me/5511999328130?text=${encodeURIComponent(mensagem)}`;
   window.open(numeroWhatsApp, '_blank');
 }
 
