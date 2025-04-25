@@ -4,88 +4,106 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 /* Corpo da página */
 body {
   font-family: 'Arial', sans-serif;
-  background-color: #f4f4f4;
-  color: #333;
+  background-color: #f4f4f4; /* fundo claro */
+  color: #333; /* texto escuro */
   line-height: 1.6;
   padding: 20px;
   margin: 0;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Suaviza transições entre os temas */
 }
+
 /* Header e título */
 header {
   text-align: center;
   margin-bottom: 30px;
+  background-color: #000; /* fundo preto */
+  padding: 20px;
 }
+
 h1 {
   font-size: 2.5rem;
-  color: #333;
+  color: #FFD700; /* amarelo para o título */
+  transition: color 0.3s ease; /* Suaviza a troca de cor do título */
 }
+
 /* Tema claro/escuro */
 body.dark-mode {
   background-color: #333;
   color: #f4f4f4;
 }
-/* Botão de alternância de tema */
+
+body.dark-mode header {
+  background-color: #222; /* Cabeçalho mais escuro no modo escuro */
+}
+
 #toggle-theme {
   background: none;
-  border: 2px solid #333;
-  color: #333;
+  border: 2px solid #FFD700; /* borda amarela */
+  color: #FFD700; /* texto amarelo */
   padding: 10px 20px;
   font-size: 1rem;
   cursor: pointer;
+  transition: background-color 0.3s, color 0.3s ease; /* Suaviza o hover do botão */
 }
+
 body.dark-mode #toggle-theme {
   border: 2px solid #f4f4f4;
   color: #f4f4f4;
 }
+
 /* Seções */
 section {
   margin-bottom: 40px;
 }
+
 h2 {
   font-size: 1.8rem;
   margin-bottom: 15px;
   text-align: center;
+  color: #000; /* Título das seções em preto */
 }
+
 h3 {
   font-size: 1.5rem;
   margin-bottom: 10px;
 }
-ul {
-  list-style-type: none;
-  padding-left: 0;
-}
-ul li {
-  font-size: 1.1rem;
-  margin-bottom: 10px;
-}
-/* Checkboxes */
-ul li input[type="checkbox"] {
-  margin-right: 10px;
-  transform: scale(1.2);
-}
-/* Formulário de agendamento */
-form input, form select, form button {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
+
+/* Botões de ação */
 form button {
-  background-color: #333;
-  color: #fff;
+  background-color: #FFD700; /* Botão amarelo */
+  color: #000; /* Texto preto */
   cursor: pointer;
   font-size: 1.2rem;
   border: none;
-  transition: background-color 0.3s;
+  padding: 12px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
+
 form button:hover {
-  background-color: #555;
+  background-color: #FFB300; /* Amarelo mais escuro no hover */
 }
-/* Ajustes para telas pequenas */
+
+/* Ajustes específicos para os campos de data e hora */
+form input[type="date"], form input[type="time"] {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: border 0.3s ease; /* Transição suave para o foco nos campos */
+}
+
+form input[type="date"]:focus, form input[type="time"]:focus {
+  border-color: #FFD700; /* Destaca os campos em amarelo quando selecionados */
+}
+
+/* Layout Responsivo */
 @media (max-width: 768px) {
   header h1 {
     font-size: 1.8rem;
@@ -104,6 +122,7 @@ form button:hover {
     font-size: 1rem;
   }
 }
+
 /* Rodapé */
 footer {
   text-align: center;
@@ -111,13 +130,32 @@ footer {
   font-size: 0.9rem;
   color: #666;
 }
+
 /* Seção de mais informações */
 .info {
-  background-color: #e1e1e1;
+  background-color: #FFD700; /* fundo amarelo */
   padding: 20px;
   text-align: center;
   border-radius: 5px;
+  color: #000;
 }
+
 body.dark-mode .info {
   background-color: #444;
+  color: #FFD700; /* texto amarelo no dark mode */
+}
+
+/* Adicionando animações no carregamento do tema */
+body.dark-mode header h1,
+body.dark-mode .info {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
