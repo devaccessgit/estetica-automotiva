@@ -2,77 +2,91 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Estética Automotiva</title>
   <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
 </head>
 <body>
-
   <header>
-    <h1>Estética Automotiva Premium</h1>
+    <h1>Estética Automotiva</h1>
+    <button id="toggle-theme">🌙</button>
   </header>
 
-  <section>
-    <p>Confira nossos serviços e faça seu agendamento sem compromisso! 🚗✨</p>
+  <main>
+    <section>
+      <h2>Serviços Prestados</h2>
+      <div class="categorias">
+        <div>
+          <h3>Estética</h3>
+          <ul>
+            <li>Lavagem detalhada</li>
+            <li>Descontaminação pintura</li>
+            <li>Enceramento técnico</li>
+            <li>Polimento / Cristalização</li>
+            <li>Polimento de vidros</li>
+            <li>Cristalização de vidros</li>
+            <li>Vitrificação de pintura</li>
+            <li>Revitalização de plásticos</li>
+            <li>Martelinho de ouro</li>
+            <li>Funilaria e pintura</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Higienizações</h3>
+          <ul>
+            <li>Sofás, colchões, cadeiras</li>
+            <li>Poltronas, persianas, tapetes</li>
+            <li>Veículos</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Acessórios</h3>
+          <ul>
+            <li>Som, alarme, engates</li>
+            <li>Insulfilm, lâmpadas</li>
+            <li>Envelopamento, PPF</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Manutenções</h3>
+          <ul>
+            <li>Óleo e filtros, suspensão</li>
+            <li>Freio, correia dentada</li>
+            <li>Alinhamento / Balanceamento</li>
+            <li>Revisões, diagnóstico computadorizado</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-    <h2>Estética</h2>
-    <ul>
-      <li>Lavagem detalhada</li>
-      <li>Descontaminação pintura</li>
-      <li>Enceramento técnico</li>
-      <li>Polimento / Cristalização</li>
-      <li>Polimento vidros</li>
-      <li>Cristalização vidros</li>
-      <li>Vitrificação pintura</li>
-      <li>Revitalização plásticos</li>
-      <li>Martelinho de ouro</li>
-      <li>Funilaria e pintura</li>
-    </ul>
+    <section id="agendamento">
+      <h2>Agende seu horário</h2>
+      <form id="form-agendamento">
+        <input type="text" name="nome" placeholder="Seu nome" required />
+        <input type="tel" name="whatsapp" placeholder="WhatsApp" required />
+        <select name="servico" required>
+          <option value="">Escolha o serviço</option>
+          <option>Lavagem detalhada</option>
+          <option>Polimento</option>
+          <option>Insulfilm</option>
+          <option>Revisão</option>
+        </select>
+        <input type="date" name="data" required />
+        <input type="time" name="hora" required />
+        <button type="submit">Enviar por WhatsApp</button>
+      </form>
+    </section>
 
-    <h2>Higienizações</h2>
-    <ul>
-      <li>Sofás</li>
-      <li>Colchões</li>
-      <li>Cadeiras</li>
-      <li>Poltronas</li>
-      <li>Persianas</li>
-      <li>Tapetes</li>
-      <li>Veículos</li>
-    </ul>
-
-    <h2>Acessórios</h2>
-    <ul>
-      <li>Som</li>
-      <li>Alarme</li>
-      <li>Engates</li>
-      <li>Insulfilm</li>
-      <li>Lâmpadas</li>
-      <li>Envelopamento</li>
-      <li>PPF</li>
-    </ul>
-
-    <h2>Manutenções</h2>
-    <ul>
-      <li>Óleo e filtros</li>
-      <li>Suspensão</li>
-      <li>Freio</li>
-      <li>Correia dentada</li>
-      <li>Alinhamento / Balanceamento</li>
-      <li>Revisões</li>
-      <li>Diagnóstico computadorizado</li>
-    </ul>
-
-    <button class="btn" onclick="abrirWhatsApp()">
-      Fazer Orçamento / Agendamento via WhatsApp
-    </button>
-
-    <p class="info-extra">🛻 Sistema leva e traz incluso!</p>
-  </section>
+    <section class="info">
+      <h2>Mais informações</h2>
+      <p>Faça seu orçamento sem compromisso!</p>
+      <p>Sistema leva e traz disponível 🚗💨</p>
+    </section>
+  </main>
 
   <footer>
-    &copy; 2025 Estética Automotiva. Todos os direitos reservados.
+    <p>&copy; 2025 Estética Automotiva. Todos os direitos reservados.</p>
   </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
