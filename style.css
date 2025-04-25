@@ -94,7 +94,7 @@ form input[type="date"], form input[type="time"] {
   padding: 12px;
   font-size: 1rem;
   margin-bottom: 15px;
-  border: 1px solid #ccc;
+  border: 1px solid #0a0a0a;
   border-radius: 5px;
   transition: border 0.3s ease; /* Transição suave para o foco nos campos */
 }
