@@ -103,6 +103,27 @@ form input[type="date"]:focus, form input[type="time"]:focus {
   border-color: #FFD700; /* Destaca os campos em amarelo quando selecionados */
 }
 
+/* Ajuste para garantir que os campos de formulário fiquem em linhas separadas */
+form label {
+  display: block;  /* Faz o label ocupar toda a linha */
+  margin-bottom: 8px; /* Adiciona um espaçamento entre o label e o campo */
+}
+
+form input {
+  display: block;  /* Faz o input ocupar toda a linha */
+  width: 100%;  /* Garante que os inputs ocupem toda a largura do formulário */
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #0a0a0a;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+form button {
+  display: block;  /* Faz o botão ocupar toda a linha */
+  margin-top: 20px;  /* Adiciona um espaçamento entre os campos e o botão */
+}
+
 /* Layout Responsivo */
 @media (max-width: 768px) {
   header h1 {
