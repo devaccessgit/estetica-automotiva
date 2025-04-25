@@ -1,8 +1,14 @@
-// Alternar entre claro e escuro
-document.getElementById('toggle-theme').addEventListener('click', () => {
-  document.body.classList.toggle('dark-mode');
+document.addEventListener('DOMContentLoaded', () => {
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'dark') {
+    document.body.classList.add('dark-mode');
+  }
 });
 
+document.getElementById('toggle-theme').addEventListener('click', () => {
+  document.body.classList.toggle('dark-mode');
+  localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
+});
 // Enviar agendamento para WhatsApp
 document.getElementById('form-agendamento').addEventListener('submit', (e) => {
   e.preventDefault();
@@ -11,6 +17,10 @@ document.getElementById('form-agendamento').addEventListener('submit', (e) => {
   const data = document.querySelector('input[name="data"]').value;
   const hora = document.querySelector('input[name="hora"]').value;
 
+  if (!nome || !data || !hora) {
+    alert('Por favor, preencha todos os campos.');
+    return;
+  }
   // Coletar os serviços selecionados (checkboxes marcados)
   const checkboxes = document.querySelectorAll('input[name="servicos"]:checked');
   const servicosSelecionados = Array.from(checkboxes)
