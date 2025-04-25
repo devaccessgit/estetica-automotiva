@@ -13,23 +13,39 @@ body {
   line-height: 1.6;
   padding: 20px;
   margin: 0;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-/* Header e título */
+/* Tema escuro */
+body.dark-mode {
+  background-color: #121212;
+  color: #f4f4f4;
+}
+
+/* Header */
 header {
-  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 30px;
 }
 
-h1 {
-  font-size: 2.5rem;
+.logo-text {
+  font-size: 2rem;
+  font-weight: bold;
   color: #333;
 }
 
-/* Tema claro/escuro */
-body.dark-mode {
-  background-color: #333;
+.logo-text .plus {
+  color: #f4c20d;
+}
+
+body.dark-mode .logo-text {
   color: #f4f4f4;
+}
+
+body.dark-mode .logo-text .plus {
+  color: #f4c20d;
 }
 
 /* Botão de alternância de tema */
@@ -40,6 +56,8 @@ body.dark-mode {
   padding: 10px 20px;
   font-size: 1rem;
   cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 body.dark-mode #toggle-theme {
@@ -52,83 +70,115 @@ section {
   margin-bottom: 40px;
 }
 
-h2 {
-  font-size: 1.8rem;
-  margin-bottom: 15px;
+.intro {
   text-align: center;
+  margin-bottom: 20px;
 }
 
-h3 {
+.intro h1 {
+  font-size: 3rem;
+  color: #333;
+}
+
+.intro p {
+  font-size: 1.2rem;
+  color: #777;
+}
+
+.categorias {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.categorias div {
+  width: 22%;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+}
+
+.categorias div h3 {
   font-size: 1.5rem;
+  color: #f4c20d;
   margin-bottom: 10px;
 }
 
-ul {
-  list-style-type: none;
-  padding-left: 0;
+.categorias div ul {
+  list-style: none;
+  padding-left: 20px;
 }
 
-ul li {
+.categorias div ul li {
+  margin: 8px 0;
   font-size: 1.1rem;
-  margin-bottom: 10px;
+  color: #333;
 }
 
-/* Checkboxes */
-ul li input[type="checkbox"] {
-  margin-right: 10px;
-  transform: scale(1.2);
+#agendamento {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Formulário de agendamento */
-form input, form select, form button {
+#agendamento h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+#form-agendamento input,
+#form-agendamento select,
+#form-agendamento button {
   width: 100%;
   padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
+  margin: 10px 0;
+  font-size: 1rem;
+  border: 1px solid #ddd;
   border-radius: 5px;
 }
 
-form button {
-  background-color: #333;
+#form-agendamento button {
+  background-color: #f4c20d;
   color: #fff;
   cursor: pointer;
-  font-size: 1.2rem;
-  border: none;
-  transition: background-color 0.3s;
 }
 
-form button:hover {
-  background-color: #555;
+#form-agendamento button:hover {
+  background-color: #e0a900;
 }
 
-/* Layout Responsivo */
-@media (min-width: 768px) {
-  .categorias {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-  }
-  .categorias div {
-    width: 23%;
-  }
+.info {
+  text-align: center;
+  margin-top: 20px;
 }
 
-/* Rodapé */
 footer {
   text-align: center;
+  padding: 20px 0;
+  background-color: #333;
+  color: #fff;
   margin-top: 40px;
-  font-size: 0.9rem;
-  color: #666;
 }
 
-/* Seção de mais informações */
-.info {
-  background-color: #e1e1e1;
-  padding: 20px;
-  text-align: center;
-  border-radius: 5px;
-}
+/* Responsividade */
+@media (max-width: 768px) {
+  .categorias {
+    flex-direction: column;
+    align-items: center;
+  }
 
-body.dark-mode .info {
-  background-color: #444;
+  .categorias div {
+    width: 80%;
+    margin: 10px 0;
+  }
+
+  #form-agendamento input,
+  #form-agendamento select,
+  #form-agendamento button {
+    width: 100%;
+  }
 }
