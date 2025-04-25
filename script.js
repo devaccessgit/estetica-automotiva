@@ -1,27 +1,22 @@
-const toggleThemeButton = document.getElementById('toggle-theme');
-
-toggleThemeButton.addEventListener('click', () => {
-  document.body.classList.toggle('dark-mode');
-});
-
-// Função para enviar mensagem via WhatsApp
-function enviarMensagemWhatsApp(nome, servico, data, hora, telefone) {
-  const mensagem = `Olá ${nome}! Seu agendamento para o serviço de ${servico} foi confirmado para o dia ${data} às ${hora}.`;
-  const numeroWhatsApp = `https://wa.me/5511999328130?text=${encodeURIComponent(mensagem)}`;
-  window.open(numeroWhatsApp, '_blank');
-}
-
-// Função para o envio do agendamento
-const form = document.getElementById('form-agendamento');
-
-form.addEventListener('submit', (event) => {
-  event.preventDefault();
-
-  const nome = document.getElementById('nome').value;
-  const servico = document.getElementById('servico').value;
-  const data = document.getElementById('data').value;
-  const hora = document.getElementById('hora').value;
-  const telefone = document.getElementById('telefone').value;
-
-  enviarMensagemWhatsApp(nome, servico, data, hora, telefone);
-});
+// Alternar entre claro e escuro
+document.getElementById('toggle-theme').addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+  });
+  
+  // Enviar agendamento para WhatsApp
+  document.getElementById('form-agendamento').addEventListener('submit', (e) => {
+    e.preventDefault();
+  
+    const nome = document.getElementById('nome').value;
+    const servico = document.getElementById('servico').value;
+    const data = document.getElementById('data').value;
+    const hora = document.getElementById('hora').value;
+  
+    // Número fixo da estética automotiva
+    const numeroWhatsApp = '5511999321830';
+  
+    const mensagem = `Olá! Novo agendamento:\n\n👤 Nome: ${nome}\n🔧 Serviço: ${servico}\n📅 Data: ${data}\n⏰ Hora: ${hora}`;
+    const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
+  
+    window.open(url, '_blank');
+  });
